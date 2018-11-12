@@ -1,8 +1,8 @@
-export class ListaItem{
-    desc:string;
-    completado: boolean;
+export class ItemList{
+    description:string;
+    done: boolean;
     constructor(desc: string){
-        this.desc=desc;
-        this.completado=false;
+        this.description=desc;
+        this.done=false;
     }
 }

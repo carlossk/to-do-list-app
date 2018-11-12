@@ -1,2 +1,2 @@
-export {ListaItem} from './lista-item.model';
-export { Lista} from './lista.model'
+export {ItemList} from './lista-item.model';
+export { List} from './list.model'

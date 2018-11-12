@@ -5,19 +5,27 @@ import { MyApp } from './app.component';
 
 
 import { TabsPage } from '../pages/tabs/tabs';
-import { PendientesPage} from '../pages/pendientes/pendientes.component';
-import { TerminadosPage } from '../pages/terminados/terminados.component';
+import { PendingPage } from '../pages/pending/pending.component';
+import { ListComponent } from '../components/list.component';
+import { AddPage } from '../pages/add/add.component';
+import { DonePage } from '../pages/done/done.component';
+
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
-import { DeseosService } from '../services/deseos.service';
+
+import { ToDoListService } from '../services/to-do-list.service';
+import { FilterDonePipe } from '../pipes/filter-done/filter-done';
 
 @NgModule({
   declarations: [
     MyApp,
     TabsPage,
-    PendientesPage,
-    TerminadosPage
+    PendingPage,
+    DonePage,
+    AddPage,
+    FilterDonePipe,
+    ListComponent
   ],
   imports: [
     BrowserModule,
@@ -27,15 +35,16 @@ import { DeseosService } from '../services/deseos.service';
   entryComponents: [
     MyApp,
     TabsPage,
-    PendientesPage,
-    TerminadosPage
-    
+    PendingPage,
+    DonePage,
+    AddPage
+
   ],
   providers: [
     StatusBar,
     SplashScreen,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
-    DeseosService
+    ToDoListService
   ]
 })
 export class AppModule {}
